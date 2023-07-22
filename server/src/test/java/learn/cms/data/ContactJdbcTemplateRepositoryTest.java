@@ -44,6 +44,7 @@ public class ContactJdbcTemplateRepositoryTest {
         Contact actual= repository.add(contact);
         assertNotNull(actual);
         assertEquals(2, actual.getContactID());
+        System.out.println(actual.getFirstName());
     }
 
     private Contact makeContact() {

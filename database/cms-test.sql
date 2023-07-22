@@ -4,7 +4,7 @@ create database cms_test;
 use cms_test;
 
 create table contact (
-contact_id varchar(250) primary key,
+contact_id int primary key auto_increment,
 first_name varchar(250) not null,
 last_name varchar(250) not null,
 email varchar(250) not null,

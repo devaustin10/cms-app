@@ -35,7 +35,7 @@ public class ContactJdbcTemplateRepository implements ContactRepository {
 
     @Override
     public Contact findById(int contactId) {
-        final String sql = "select first_name, last_name, email, phone_number " +
+        final String sql = "select contact_id, first_name, last_name, email, phone_number " +
                 "from contact where contact_id = ?;";
         return jdbcTemplate.query(sql, new ContactMapper(), contactId).stream()
                 .findFirst()
