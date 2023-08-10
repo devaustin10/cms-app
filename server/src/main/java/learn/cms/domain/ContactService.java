@@ -17,11 +17,11 @@ public class ContactService {
     }
 
     public List<Contact> findAll() {
-        return null;
+        return repository.findAll();
     }
 
-    public List<Contact> findById(int contactId) {
-        return null;
+    public Contact findById(int contactId) {
+        return repository.findById(contactId);
     }
 
     public Result<Contact> add(Contact contact) {

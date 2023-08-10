@@ -18,11 +18,9 @@ public class ContactJdbcTemplateRepository implements ContactRepository {
     // Constructor based dependency injection
         // POJO is the JdbcTemplate
         // Controller: ContactJdbcTemplateRepository
-            // creates component & makes bean object for JdbcTemplate
     private final JdbcTemplate jdbcTemplate;
 
-    // JdbcTemplate autowired into constructor (dependency injected) -> loose coupling
-//    @Autowired
+    @Autowired
     public ContactJdbcTemplateRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
