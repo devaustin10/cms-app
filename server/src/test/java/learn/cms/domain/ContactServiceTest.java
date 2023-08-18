@@ -26,7 +26,7 @@ public class ContactServiceTest {
         newContact.setFirstName("John");
         newContact.setLastName("Smith");
         newContact.setEmail("johnSmith@test.com");
-        newContact.setPhoneNumber(1234567891);
+        newContact.setPhoneNumber("1234567891");
 
         when(repository.add(newContact)).thenReturn(newContact);
         Result<Contact> result = service.add(newContact);

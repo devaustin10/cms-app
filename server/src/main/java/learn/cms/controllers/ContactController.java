@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/contact")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/contacts")
 public class ContactController {
 
     private final ContactService service;

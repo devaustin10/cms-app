@@ -5,13 +5,13 @@ public class Contact {
     private String firstName;
     private String lastName;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
 
     public Contact() {
 
     }
 
-    public Contact(int contactID, String firstName, String lastName, String email, int phoneNumber) {
+    public Contact(int contactID, String firstName, String lastName, String email, String phoneNumber) {
         this.contactID = contactID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,11 +51,11 @@ public class Contact {
         this.email = email;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }
