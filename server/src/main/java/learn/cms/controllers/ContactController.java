@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/contact")
@@ -16,6 +18,21 @@ public class ContactController {
 
     public ContactController(ContactService service) {
         this.service = service;
+    }
+
+    @GetMapping
+    public List<Contact> findAll() {
+        return service.findAll();
+    }
+
+    @GetMapping("/{contactId}")
+    public ResponseEntity<Contact> findById(@PathVariable int contactId) {
+        Contact result = service.findById(contactId);
+
+        if (result == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @PostMapping
