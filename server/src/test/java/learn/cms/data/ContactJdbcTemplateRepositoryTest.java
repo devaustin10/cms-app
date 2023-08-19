@@ -72,7 +72,7 @@ public class ContactJdbcTemplateRepositoryTest {
         contact.setFirstName("Robert");
         contact.setLastName("TestLast");
         contact.setEmail("robert@test.com");
-        contact.setPhoneNumber(1234567891);
+        contact.setPhoneNumber("1234567891");
         return contact;
     }
 

@@ -1,1 +1,30 @@
-<p>contact-create works!</p>
+<!--`contactForm` property being binded to the formGroup instance
+allows you to connect your reactive form controls (defined in your component) to the actual HTML form element
+
+formGroup (without square brackets) is not a directive; it's the name of a property that you use to connect a FormGroup 
+instance to a <form> element in your template.
+[formGroup] (with square brackets) is a property binding syntax that binds the value of the formGroup property 
+(i.e., the FormGroup instance) to the <form> element in your template-->
+    <!--(ngSubmit) is an event binding syntax in Angular. It's used to listen for the form submission event and execute a method when the event occurs.-->
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="container mt-5">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="number" id="phoneNumber" formControlName="phoneNumber" class="form-control">
+    </div>
+    <!-- Add more fields as needed -->
+  
+    <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Add Contact</button>
+  </form>
+  
