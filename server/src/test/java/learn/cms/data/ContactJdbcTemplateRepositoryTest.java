@@ -3,6 +3,7 @@ package learn.cms.data;
 import learn.cms.models.Contact;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -45,6 +46,25 @@ public class ContactJdbcTemplateRepositoryTest {
         assertNotNull(actual);
         assertEquals(2, actual.getContactID());
         System.out.println(actual.getFirstName());
+    }
+
+    @Test
+    void shouldNotAddContactWithInvalidData() {
+        Contact contact = makeInvalidContact();
+
+        // Mock the behavior of the repository to simulate an unsuccessful insert
+        Mockito.when(repository.add(contact)).thenReturn(null);
+        Contact actual = repository.add(contact);
+
+        assertNull(actual);
+    }
+
+    private Contact makeInvalidContact() {
+        Contact contact = new Contact();
+        // Invalid data: First name and email are missing
+        contact.setLastName("InvalidLast");
+        contact.setPhoneNumber(1234567891);
+        return contact;
     }
 
     private Contact makeContact() {
