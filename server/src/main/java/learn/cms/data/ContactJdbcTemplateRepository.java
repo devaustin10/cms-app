@@ -72,11 +72,22 @@ public class ContactJdbcTemplateRepository implements ContactRepository {
 
     @Override
     public boolean update(Contact contact) {
-        return false;
+        final String sql = "update contact set "
+                + "first_name = ?, "
+                + "last_name = ?, "
+                + "email = ?, "
+                + "phone_number = ? "
+                + "where contact_id = ?;";
+        return jdbcTemplate.update(sql,
+                contact.getFirstName(),
+                contact.getLastName(),
+                contact.getEmail(),
+                contact.getPhoneNumber(),
+                contact.getContactID()) > 0;
     }
 
     @Override
     public boolean deleteById(int contactId) {
-        return false;
+        return jdbcTemplate.update("delete from contact where contact_id = ?;", contactId) > 0;
     }
 }

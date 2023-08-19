@@ -46,4 +46,18 @@ public class ContactController {
         return ErrorResponse.build(result);
     }
 
+    @PutMapping("/{contactId}")
+    public ResponseEntity<Object> update(@PathVariable int contactId, @RequestBody Contact contact) {
+        if (contactId != contact.getContactID()) {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+
+        Result<Contact> result = service.update(contact);
+        if (result.isSuccess()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return ErrorResponse.build(result);
+    }
+
 }

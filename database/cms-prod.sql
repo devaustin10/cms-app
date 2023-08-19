@@ -8,7 +8,7 @@ contact_id int primary key auto_increment,
 first_name varchar(250) not null,
 last_name varchar(250) not null,
 email varchar(250) not null,
-phone_number int not null
+phone_number varchar(20) not null
 );
 
 SELECT * FROM contact;

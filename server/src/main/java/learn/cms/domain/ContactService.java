@@ -38,6 +38,14 @@ public class ContactService {
         }
     }
 
+    public Result<Contact> update(Contact contact) {
+        return null;
+    }
+
+    public Result<Contact> delete(Contact contact) {
+        return null;
+    }
+
     private Result<Contact> validate(Contact contact) {
         Result<Contact> result = new Result<>();
         if (contact == null) {
@@ -57,4 +65,5 @@ public class ContactService {
         }
         return result;
     }
+
 }

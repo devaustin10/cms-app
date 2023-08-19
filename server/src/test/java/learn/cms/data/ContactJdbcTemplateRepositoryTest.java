@@ -49,22 +49,15 @@ public class ContactJdbcTemplateRepositoryTest {
     }
 
     @Test
-    void shouldNotAddContactWithInvalidData() {
-        Contact contact = makeInvalidContact();
-
-        // Mock the behavior of the repository to simulate an unsuccessful insert
-        Mockito.when(repository.add(contact)).thenReturn(null);
-        Contact actual = repository.add(contact);
-
-        assertNull(actual);
-    }
-
-    private Contact makeInvalidContact() {
-        Contact contact = new Contact();
-        // Invalid data: First name and email are missing
-        contact.setLastName("InvalidLast");
-        contact.setPhoneNumber(1234567891);
-        return contact;
+    void shouldUpdateContactSuccessfully() {
+        // assert
+        Contact testContactInTestDB = repository.findById(1);
+        // act
+        testContactInTestDB.setFirstName("Robin");
+        boolean updated = repository.update(testContactInTestDB);
+        // assert
+        assertTrue(updated);
+        assertEquals(testContactInTestDB.getFirstName(), "Robin");
     }
 
     private Contact makeContact() {
