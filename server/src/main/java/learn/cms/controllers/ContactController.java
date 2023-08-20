@@ -60,4 +60,12 @@ public class ContactController {
         return ErrorResponse.build(result);
     }
 
+    @DeleteMapping("/{contactId}")
+    public ResponseEntity<Void> deleteById(@PathVariable int contactId) {
+        if (service.deleteById(contactId)) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 }

@@ -1,5 +1,7 @@
 package learn.cms.models;
 
+import java.util.Objects;
+
 public class Contact {
     private int contactID;
     private String firstName;
@@ -57,5 +59,31 @@ public class Contact {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    // The toString() method in Java is used to convert an object into a human-readable string representation.
+    // It's often used for debugging, logging, and displaying information to users.
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "contactID=" + contactID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return contactID == contact.contactID && firstName.equals(contact.firstName) && lastName.equals(contact.lastName) && email.equals(contact.email) && phoneNumber.equals(contact.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(contactID, firstName, lastName, email, phoneNumber);
     }
 }
