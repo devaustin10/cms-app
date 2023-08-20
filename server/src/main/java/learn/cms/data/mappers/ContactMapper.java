@@ -19,7 +19,7 @@ public class ContactMapper implements RowMapper<Contact> {
     // not used for inserting data
     public Contact mapRow(ResultSet resultSet, int i) throws SQLException {
         Contact contact = new Contact();
-        contact.setContactID(resultSet.getInt("contact_id"));
+        contact.setContactId(resultSet.getInt("contact_id"));
         contact.setFirstName(resultSet.getString("first_name"));
         contact.setLastName(resultSet.getString("last_name"));
         contact.setEmail(resultSet.getString("email"));

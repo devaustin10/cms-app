@@ -3,7 +3,7 @@ package learn.cms.models;
 import java.util.Objects;
 
 public class Contact {
-    private int contactID;
+    private int contactId;
     private String firstName;
     private String lastName;
     private String email;
@@ -13,20 +13,20 @@ public class Contact {
 
     }
 
-    public Contact(int contactID, String firstName, String lastName, String email, String phoneNumber) {
-        this.contactID = contactID;
+    public Contact(int contactId, String firstName, String lastName, String email, String phoneNumber) {
+        this.contactId = contactId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public int getContactID() {
-        return contactID;
+    public int getContactId() {
+        return contactId;
     }
 
-    public void setContactID(int contactID) {
-        this.contactID = contactID;
+    public void setContactId(int contactId) {
+        this.contactId = contactId;
     }
 
     public String getFirstName() {
@@ -66,7 +66,7 @@ public class Contact {
     @Override
     public String toString() {
         return "Contact{" +
-                "contactID=" + contactID +
+                "contactId=" + contactId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
@@ -79,11 +79,11 @@ public class Contact {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contact contact = (Contact) o;
-        return contactID == contact.contactID && firstName.equals(contact.firstName) && lastName.equals(contact.lastName) && email.equals(contact.email) && phoneNumber.equals(contact.phoneNumber);
+        return contactId == contact.contactId && firstName.equals(contact.firstName) && lastName.equals(contact.lastName) && email.equals(contact.email) && phoneNumber.equals(contact.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(contactID, firstName, lastName, email, phoneNumber);
+        return Objects.hash(contactId, firstName, lastName, email, phoneNumber);
     }
 }

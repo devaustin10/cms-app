@@ -65,7 +65,7 @@ public class ContactJdbcTemplateRepository implements ContactRepository {
             return null;
         // otherwise, set the newly added contact's ID to the keyholder value (the auto-incremented id from db)
         } else {
-            contact.setContactID(Objects.requireNonNull(keyHolder.getKey()).intValue());
+            contact.setContactId(Objects.requireNonNull(keyHolder.getKey()).intValue());
             return contact;
         }
     }
@@ -83,7 +83,7 @@ public class ContactJdbcTemplateRepository implements ContactRepository {
                 contact.getLastName(),
                 contact.getEmail(),
                 contact.getPhoneNumber(),
-                contact.getContactID()) > 0;
+                contact.getContactId()) > 0;
     }
 
     @Override

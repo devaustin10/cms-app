@@ -40,7 +40,7 @@ public class ContactServiceTest {
     @Test
     void addContactWillReturnInvalidWhenContactIdSet() {
         Contact invalidContact = new Contact();
-        invalidContact.setContactID(123); // Setting a contact ID is not allowed for adding
+        invalidContact.setContactId(123); // Setting a contact ID is not allowed for adding
         invalidContact.setFirstName("John");
         invalidContact.setLastName("Smith");
         invalidContact.setEmail("johnSmith@test.com");
@@ -55,7 +55,7 @@ public class ContactServiceTest {
     @Test
     void updateContactWillReturnSuccessWithValidInput() {
         Contact existingContact = new Contact();
-        existingContact.setContactID(1); // Assuming an existing contact ID
+        existingContact.setContactId(1); // Assuming an existing contact ID
         existingContact.setFirstName("UpdatedFirstName");
         existingContact.setLastName("UpdatedLastName");
         existingContact.setEmail("updated@test.com");
@@ -72,7 +72,7 @@ public class ContactServiceTest {
     @Test
     void updateContactWillReturnNotFoundWhenContactNotFound() {
         Contact existingContact = new Contact();
-        existingContact.setContactID(1);
+        existingContact.setContactId(1);
         existingContact.setFirstName("UpdatedFirstName");
         existingContact.setLastName("UpdatedLastName");
         existingContact.setEmail("updated@test.com");
@@ -83,7 +83,7 @@ public class ContactServiceTest {
         Result<Contact> result = service.update(existingContact);
 
         assertEquals(ResultType.NOT_FOUND, result.getType());
-        assertEquals(String.format("contactId: %s, not found", existingContact.getContactID()), result.getMessages().get(0));
+        assertEquals(String.format("contactId: %s, not found", existingContact.getContactId()), result.getMessages().get(0));
     }
 
     @Test

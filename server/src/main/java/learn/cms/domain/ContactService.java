@@ -28,7 +28,7 @@ public class ContactService {
         Result<Contact> result = validate(contact);
         if (!result.isSuccess()) {
             return result;
-        } else if (contact.getContactID() != 0) {
+        } else if (contact.getContactId() != 0) {
             result.addMessage("contactId cannot be set for add", ResultType.INVALID);
             return result;
         } else {
@@ -42,13 +42,13 @@ public class ContactService {
         Result<Contact> result = this.validate(contact);
         if (!result.isSuccess()) {
             return result;
-        } else if (contact.getContactID() <= 0) {
+        } else if (contact.getContactId() <= 0) {
             result.addMessage("contactId must be set for update", ResultType.INVALID);
             return result;
         }
         else {
             if (!this.repository.update(contact)) {
-                String message = String.format("contactId: %s, not found", contact.getContactID());
+                String message = String.format("contactId: %s, not found", contact.getContactId());
                 result.addMessage(message, ResultType.NOT_FOUND);
                 return result;
             }

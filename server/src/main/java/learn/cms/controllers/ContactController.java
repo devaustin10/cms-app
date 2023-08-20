@@ -48,7 +48,7 @@ public class ContactController {
 
     @PutMapping("/{contactId}")
     public ResponseEntity<Object> update(@PathVariable int contactId, @RequestBody Contact contact) {
-        if (contactId != contact.getContactID()) {
+        if (contactId != contact.getContactId()) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
