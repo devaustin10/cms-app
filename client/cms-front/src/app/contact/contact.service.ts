@@ -21,4 +21,8 @@ export class ContactService {
         // returns an observable that represents the async operation of sending the data to the server
         return this.http.post(url, contactData);
     }
+
+    getAllContacts(): Observable<any[]> {
+        return this.http.get<any[]>(`${this.apiUrl}/contacts`);
+    }
 }

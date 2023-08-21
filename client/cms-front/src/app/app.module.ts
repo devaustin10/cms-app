@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ModalComponent } from './components/modal/modal.component';
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
 import { ContactEditComponent } from './contact/contact-edit/contact-edit.component';
@@ -19,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ModalComponent,
     ContactListComponent,
     ContactDetailComponent,
     ContactEditComponent,
