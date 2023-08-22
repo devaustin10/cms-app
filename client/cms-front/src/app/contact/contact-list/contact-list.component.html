@@ -7,6 +7,7 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Phone Number</th>
+          <th>Action</th> <!-- Add a header for the action column -->
         </tr>
       </thead>
       <tbody>
@@ -14,7 +15,10 @@
           <td>{{ contact.firstName }}</td>
           <td>{{ contact.lastName }}</td>
           <td>{{ contact.email }}</td>
-          <td>{{contact.phoneNumber}}</td>
+          <td>{{ contact.phoneNumber }}</td>
+          <!-- <td>
+            <a [routerLink]="['/contacts', contact.id]">View Details</a>
+        </td> -->
         </tr>
       </tbody>
     </table>

@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient} from '@angular/common/http';
+import { Contact } from "./contact.model";
 
 // Decorator indicating that this class can be injectd into other components or services
 // Decorators are applied to classes, methods, properties, and other members to add metadata or modify behavior. 
@@ -22,7 +23,11 @@ export class ContactService {
         return this.http.post(url, contactData);
     }
 
-    getAllContacts(): Observable<any[]> {
-        return this.http.get<any[]>(`${this.apiUrl}/contacts`);
+    getAllContacts(): Observable<Contact[]> {
+        return this.http.get<Contact[]>(`${this.apiUrl}/contacts`);
+    }
+
+    getContactById(id: number): Observable<Contact> {
+        return this.http.get<Contact>(`$this.apiUrl}/contacts/${id}`);
     }
 }
