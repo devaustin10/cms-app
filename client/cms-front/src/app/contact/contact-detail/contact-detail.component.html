@@ -1,1 +1,29 @@
-<div>contact-detail works</div>
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        <h2>Contact Detail</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>First Name:</strong> {{ contact.firstName }}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Last Name:</strong> {{ contact.lastName }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Email:</strong> {{ contact.email }}</p>
+          </div>
+          <!-- Add more rows and columns for other contact details -->
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              <p><strong>Phone Number:</strong> {{ contact.phoneNumber }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  

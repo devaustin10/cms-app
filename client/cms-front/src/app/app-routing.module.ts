@@ -10,7 +10,7 @@ const routes: Routes = [
     // Define routes here
     { path: '', redirectTo: '/contacts', pathMatch: 'full' }, // redirect to '/contact' by default
     { path: 'contacts', component: ContactListComponent }, // route for the Contact List
-    { path: 'contact/:id', component: ContactDetailComponent }, // route for the Contact Detail w/ a param for the contact ID
+    { path: 'contacts/:id', component: ContactDetailComponent }, // route for the Contact Detail w/ a param for the contact ID
     { path: 'contacts/add', component: ContactCreateComponent }
   ];
 

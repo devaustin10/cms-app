@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactService } from '../contact.service';
+import { Contact } from '../contact.model';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { ContactService } from '../contact.service';
 })
 export class ContactListComponent {
   // array of contacts
-  contacts: any[] = [];
+  contacts: Contact[] = [];
 
   constructor(private contactService: ContactService) { }
 
