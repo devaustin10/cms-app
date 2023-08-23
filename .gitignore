@@ -1,0 +1,9 @@
+## Mac Dependency
+.DS_Store
+
+# Ignore SonarLint analysis results and logs
+.sonarlint/
+.sonarlint.log
+
+# Ignore SonarLint project configuration
+.sonarlint/sonarlint.properties

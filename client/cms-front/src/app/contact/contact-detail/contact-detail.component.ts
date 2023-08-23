@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ContactService } from '../contact.service';
 import { Contact } from '../contact.model';
 
@@ -10,7 +10,7 @@ import { Contact } from '../contact.model';
 export class ContactDetailComponent {
   contact!: Contact; // Change the type as per you contact model
 
-  constructor(private route: ActivatedRoute, private contactService: ContactService) { }
+  constructor(private route: ActivatedRoute, private contactService: ContactService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -29,4 +29,19 @@ export class ContactDetailComponent {
       }
     });
   } 
+
+  deleteContact() {
+    if (confirm('Are you sure you want to delete this contact?')) {
+      this.contactService.deleteContact(this.contact.contactId).subscribe({
+        next: () => {
+          console.log('Contact deleted successfully');
+          this.router.navigate(['/contacts']); // Navigate back to the contact list
+        },
+        error: (error) => {
+          console.error('Error deleting contact:', error);
+        }
+    });
+    }
+  }
+
 }

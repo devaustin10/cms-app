@@ -24,6 +24,13 @@
             </div>
           </div>
       </div>
+
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <a [routerLink]="['/contacts', contact.contactId, 'edit']" class="btn btn-primary">Edit</a>
+          <button (click)="deleteContact()" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
     </div>
   </div>
   

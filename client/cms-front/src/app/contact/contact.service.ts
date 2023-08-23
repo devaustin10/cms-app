@@ -28,6 +28,17 @@ export class ContactService {
     }
 
     getContactById(id: number): Observable<Contact> {
-        return this.http.get<Contact>(`$this.apiUrl}/contacts/${id}`);
+        return this.http.get<Contact>(`${this.apiUrl}/contacts/${id}`);
     }
+
+    deleteContact(id: number): Observable<void> {
+        const url = `${this.apiUrl}/contacts/${id}`;
+        return this.http.delete<void>(url);
+    }
+
+    updateContact(updatedContact: Contact): Observable<Contact> {
+        const url = `${this.apiUrl}/contacts/${updatedContact.contactId}`;
+        return this.http.put<Contact>(url, updatedContact);
+    }
+
 }

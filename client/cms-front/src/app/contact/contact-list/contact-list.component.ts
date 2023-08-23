@@ -13,7 +13,7 @@ export class ContactListComponent {
 
   constructor(private contactService: ContactService) { }
 
-  ngOnInIt(): void {
+  ngOnInit(): void {
     this.loadContacts();
   }
 
