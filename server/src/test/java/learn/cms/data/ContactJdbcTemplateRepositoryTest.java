@@ -44,7 +44,7 @@ public class ContactJdbcTemplateRepositoryTest {
         Contact contact = makeContact();
         Contact actual= repository.add(contact);
         assertNotNull(actual);
-        assertEquals(actual.getLastName(), "TestLast");
+        assertEquals("TestLast", actual.getLastName());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class ContactJdbcTemplateRepositoryTest {
         boolean updated = repository.update(testContactInTestDB);
         // assert
         assertTrue(updated);
-        assertEquals(testContactInTestDB.getFirstName(), "Robin");
+        assertEquals("Robin", testContactInTestDB.getFirstName());
     }
 
     @Test

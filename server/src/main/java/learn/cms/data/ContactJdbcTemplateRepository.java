@@ -48,7 +48,7 @@ public class ContactJdbcTemplateRepository implements ContactRepository {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         // executes an insert statement on the db, returns number of rows affected
         // this.jdbcTemplate.update(callback, keyHolder)
-        int rowsAffected = this.jdbcTemplate.update((connection) -> {
+        int rowsAffected = this.jdbcTemplate.update(connection -> {
             // defines a call back function that receives a connection object, representing the db connection
                 // takes two arguments, a callback function and the `KeyHolder` instance
                     // the lambda expression acts as the callback function, taking `Connection` object as input
