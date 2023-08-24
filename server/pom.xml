@@ -41,7 +41,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- devtools -->
+		<!-- devtools
+		Spring Boot DevTools: uses a special mechanism to reload the application without
+		requiring a new JAR to be generated. DevTools can automatically detect
+		changes in your code and reload the application on-the-fly during development.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
