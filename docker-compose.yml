@@ -13,9 +13,18 @@ services:
       context: ./server
     ports:
       - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/cms_prod
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: top-secret-password
+
+      SPRING_DATASOURCE_TEST_URL: jdbc:mysql://localhost:3306/cms_test
+      SPRING_DATASOURCE_TEST_USERNAME: root
+      SPRING_DATASOURCE_TEST_PASSWORD: top-secret-password
 
   client:
     build:
       context: ./client
     ports:
-      - "3000:4200"
+      - "4200:4200"
+

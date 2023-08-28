@@ -60,4 +60,17 @@
 		</dependency>
 	</dependencies>
 
+	<!-- spring-boot-maven-plugin configuration -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>learn.cms.App</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
